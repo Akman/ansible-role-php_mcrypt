@@ -1,0 +1,10 @@
+---
+- name: Copy mcrypt ini into main extension config folder
+  template:
+    src: mcrypt.ini.j2
+    dest: "{{ item }}/{{ php_mcrypt_config_filename }}"
+    owner: "{{ __php_mcrypt_user }}"
+    group: "{{ __php_mcrypt_group }}"
+    mode: 0644
+  with_items: "{{ php_extension_conf_paths }}"
+  notify: "{{ handlers }}"

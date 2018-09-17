@@ -1,0 +1,19 @@
+---
+# vars/Debian.yml
+
+__php_mcrypt_user: "{{ php_mcrypt_user | default('root') }}"
+__php_mcrypt_group: "{{ php_mcrypt_group | default('root') }}"
+
+__php_version: "{{ php_version | default('7.2') }}"
+
+__mcrypt_version: "{{ mcrypt_version | default('1.0.1') }}"
+__php_mcrypt_config_filename: mcrypt.ini
+
+__php_extension_conf_paths:
+  - "/etc/php/{{ __php_version }}/fpm/conf.d"
+  - "/etc/php/{{ __php_version }}/apache2/conf.d"
+  - "/etc/php/{{ __php_version }}/cli/conf.d"
+
+handlers:
+  - restart webserver
+  - restart php-fpm

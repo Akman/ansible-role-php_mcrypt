@@ -1,0 +1,28 @@
+---
+# meta/main.yml
+
+dependencies:
+  - geerlingguy.php
+
+galaxy_info:
+  role_name: php_mcrypt
+  author: Akman
+  description: mCrypt package for php on Linux
+  license: "license (MIT)"
+  min_ansible_version: 2.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - raring
+        - saucy
+        - trusty
+        - xenial
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - server
+
+allow_duplicates: yes
