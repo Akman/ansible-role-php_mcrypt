@@ -23,7 +23,6 @@
 
 - name: Ensure dependencies are installed (Debian)
   apt:
-    name: "{{ item }}"
     name: ["build-essential", "autoconf", "pkg-config", "php{{ __php_version }}-dev", "libmcrypt-dev", "php-pear"]
     state: present
   when: ansible_os_family == 'Debian'
